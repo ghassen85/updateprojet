@@ -1,0 +1,1558 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "",
+    "description": "",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:4000",
+  "basePath": "",
+  "tags": [
+    
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+ "/chercheurs/Addchercheur":{
+     
+
+      "post": {
+
+        "tags": [
+
+          "chercheurs"
+
+        ],
+
+        "description": "upadte user",
+
+        "parameters": [
+
+          {
+
+            "name": "name",
+
+            "in":"formData",
+    
+            "required":true,
+
+            "description":"user that we want to update",
+
+            "type":"string"
+
+          },
+          {
+
+            "name": "email",
+
+            "in":"formData",
+    
+            "required":true,
+
+            "description":"user that we want to update",
+
+            "type":"string"
+
+          }, {
+    
+            "name": "image",
+
+            "in":"formData",
+
+            "required":true,
+
+            "description":"image of user",
+
+            "type":"file",
+
+            "items":{
+
+              "name":"image",
+
+              "type":"file",
+
+              "in":"formData",
+
+              "required":true,
+
+              "description":"user that we want to update"
+
+            }
+
+          },
+          {
+
+            "name": "password",
+            "in":"formData",
+    
+            "required":true,
+
+            "description":"user that we want to update",
+
+            "type":"string"
+
+          },
+          {
+
+            "name": "domaine",
+
+            "in":"formData",
+    
+                "required":true,
+    
+                "description":"user that we want to update",
+    
+                "type":"string"
+
+          },
+
+          {
+
+            "name": "papier",
+
+            "in":"formData",
+    
+                "required":true,
+    
+                "description":"user that we want to update",
+    
+                "type":"string"
+
+          }
+
+        ],
+
+        "produces": [
+
+          "application/json"
+
+        ],
+
+        "responses": {
+
+          "200": {
+
+            "description": " user is trouver",
+
+            "schema": {
+
+              "$ref": "#/definitions/chercheur"
+
+            }
+
+          }
+
+        }
+
+      }
+
+     
+
+    
+},
+"/chercheurs/getAllchercheur":{
+  "get": {
+
+    "tags": [
+
+      "chercheurs"
+
+    ],
+
+    "summary": "Get all produits in system",
+
+    "responses": {
+
+      "200": {
+
+        "description": "OK",
+
+        "schema": {
+
+          "$ref": "#/definitions/chercheur"
+
+        }
+
+      }
+
+    }
+
+  }
+
+}, 
+"/chercheurs/getOnechercheur/{id}":{
+  "parameters": [
+  
+    {
+
+      "name": "id",
+
+      "in": "path",
+
+      "required": true,
+
+      "description": "ID of user that we want to find",
+
+      "type": "string"
+
+    }
+
+  ],
+
+  "get": {
+
+    "tags": [
+
+      "chercheurs"
+
+    ],
+
+    "summary": "Get one chercheurs in system",
+
+    "responses": {
+
+      "200": {
+
+        "description": "OK",
+
+        "schema": {
+
+          "$ref": "#/definitions/chercheur"
+
+        }
+
+      }
+
+    }
+
+  
+
+  }},
+  "/chercheurs/updateOnechercheur/{id}":{
+    "parameters": [
+  
+      {
+
+        "name": "id",
+
+        "in": "path",
+
+        "required": true,
+
+        "description": "ID of user that we want to find",
+
+        "type": "string"
+
+      }
+
+    ],
+
+  
+
+  "put": {
+
+    "summary": "Update user with give ID",
+
+    "tags": [
+
+      "chercheurs"
+
+    ],
+
+    "parameters": [
+
+      {
+
+        "name": "chercheur",
+
+        "in": "body",
+
+        "description": "User with new values of properties",
+
+        "schema": {
+
+          "$ref": "#/definitions/chercheur"
+
+        }
+
+      }
+
+    ],
+
+    "responses": {
+
+      "200": {
+
+        "description": "User is updated",
+
+        "schema": {
+
+          "$ref": "#/definitions/chercheur"
+
+        }
+
+      }
+
+    }
+
+  }
+
+  },
+  "/chercheurs/delteOnechercheur/{id}":{
+    "parameters": [
+
+      {
+
+        "name": "id",
+
+        "in": "path",
+
+        "required": true,
+
+        "description": "ID of user that we want to find",
+
+        "type": "string"
+
+      }
+
+    ],
+      "delete": {
+
+    "summary": "Delete user with given ID",
+
+    "tags": [
+
+      "chercheurs"
+
+    ],
+
+    "responses": {
+
+      "200": {
+
+        "description": "User is deleted",
+
+        "schema": {
+
+          "$ref": "#/definitions/chercheur"
+
+        }
+
+      }
+
+    }
+
+  }
+    
+
+  },
+  "/experts/Addexpert":{
+    "post": {
+      "tags": [
+
+        "experts"
+
+      ],
+
+      "description": "upadte user",
+
+      "parameters": [
+
+        {
+
+          "name": "expert",
+
+          "in": "body",
+
+          "description": "user that we want to upadte",
+
+          "schema": {
+
+            "$ref": "#/definitions/expert"
+
+          }
+
+        }
+
+      ],
+
+      "produces": [
+
+        "application/json"
+
+      ],
+
+      "responses": {
+
+        "200": {
+
+          "description": " user is trouver",
+
+          "schema": {
+
+            "$ref": "#/definitions/expert"
+
+          }
+
+        }
+
+      }
+
+    
+
+    }
+  },
+  "/experts/getexpert":{
+    "get": {
+
+      "tags": [
+  
+        "experts"
+  
+      ],
+  
+      "summary": "Get all produits in system",
+  
+      "responses": {
+  
+        "200": {
+  
+          "description": "OK",
+  
+          "schema": {
+  
+            "$ref": "#/definitions/expert"
+  
+          }
+  
+        }
+  
+      }
+  
+    }
+  },
+  "/experts/getOneexpert/{id}":{
+    "parameters": [
+  
+      {
+  
+        "name": "id",
+  
+        "in": "path",
+  
+        "required": true,
+  
+        "description": "ID of user that we want to find",
+  
+        "type": "string"
+  
+      }
+  
+    ],
+  
+    "get": {
+  
+      "tags": [
+  
+        "experts"
+  
+      ],
+  
+      "summary": "Get one users in system",
+  
+      "responses": {
+  
+        "200": {
+  
+          "description": "OK",
+  
+          "schema": {
+  
+            "$ref": "#/definitions/expert"
+  
+          }
+  
+        }
+  
+      }
+  
+    }
+  },
+  "/experts/updateexpert/{id}":{
+    "parameters": [
+  
+      {
+
+        "name": "id",
+
+        "in": "path",
+
+        "required": true,
+
+        "description": "ID of user that we want to find",
+
+        "type": "string"
+
+      }
+
+    ],
+
+  
+
+  "put": {
+
+    "summary": "Update user with give ID",
+
+    "tags": [
+
+      "experts"
+
+    ],
+
+    "parameters": [
+
+      {
+
+        "name": "expert",
+
+        "in": "body",
+
+        "description": "User with new values of properties",
+
+        "schema": {
+
+          "$ref": "#/definitions/expert"
+
+        }
+
+      }
+
+    ],
+
+    "responses": {
+
+      "200": {
+
+        "description": "User is updated",
+
+        "schema": {
+
+          "$ref": "#/definitions/expert"
+
+        }
+
+      }
+
+    }
+
+  }
+  },
+  "/experts/delteexpert/{id}":{
+    "parameters": [
+
+      {
+
+        "name": "id",
+
+        "in": "path",
+
+        "required": true,
+
+        "description": "ID of user that we want to find",
+
+        "type": "string"
+
+      }
+
+    ],
+      "delete": {
+
+    "summary": "Delete user with given ID",
+
+    "tags": [
+
+      "experts"
+
+    ],
+
+    "responses": {
+
+      "200": {
+
+        "description": "expert is deleted",
+
+        "schema": {
+
+          "$ref": "#/definitions/expert"
+
+        }
+
+      }
+
+    }
+
+  }
+    
+  },
+  "/editeurs/Addediteur":{
+    "post": {
+      "tags": [
+
+        "editeurs"
+
+      ],
+
+      "description": "upadte user",
+
+      "parameters": [
+
+        {
+
+          "name": "editeur",
+
+          "in": "body",
+
+          "description": "user that we want to upadte",
+
+          "schema": {
+
+            "$ref": "#/definitions/editeur"
+
+          }
+
+        }
+
+      ],
+
+      "produces": [
+
+        "application/json"
+
+      ],
+
+      "responses": {
+
+        "200": {
+
+          "description": " user is trouver",
+
+          "schema": {
+
+            "$ref": "#/definitions/editeur"
+
+          }
+
+        }
+
+      }
+
+    
+
+    }
+
+  },
+  "/editeurs/getediteur":{
+    "get": {
+
+      "tags": [
+  
+        "editeurs"
+  
+      ],
+  
+      "summary": "Get all editeurs in system",
+  
+      "responses": {
+  
+        "200": {
+  
+          "description": "OK",
+  
+          "schema": {
+  
+            "$ref": "#/definitions/editeur"
+  
+          }
+  
+        }
+  
+      }
+  
+    }
+  },
+  "/editeurs/getOne/{id}":{
+    "parameters": [
+  
+      {
+  
+        "name": "id",
+  
+        "in": "path",
+  
+        "required": true,
+  
+        "description": "ID of editeur that we want to find",
+  
+        "type": "string"
+  
+      }
+  
+    ],
+  
+    "get": {
+  
+      "tags": [
+  
+        "editeurs"
+  
+      ],
+  
+      "summary": "Get one editeur in system",
+  
+      "responses": {
+  
+        "200": {
+  
+          "description": "OK",
+  
+          "schema": {
+  
+            "$ref": "#/definitions/editeur"
+  
+          }
+  
+        }
+  
+      }
+  
+    }
+  },
+  "/editeurs/updateediteur/{id}":{
+    "parameters": [
+  
+      {
+
+        "name": "id",
+
+        "in": "path",
+
+        "required": true,
+
+        "description": "ID of user that we want to find",
+
+        "type": "string"
+
+      }
+
+    ],
+
+  
+
+  "put": {
+
+    "summary": "Update user with give ID",
+
+    "tags": [
+
+      "editeurs"
+
+    ],
+
+    "parameters": [
+
+      {
+
+        "name": "editeur",
+
+        "in": "body",
+
+        "description": "editeur with new values of properties",
+
+        "schema": {
+
+          "$ref": "#/definitions/editeur"
+
+        }
+
+      }
+
+    ],
+
+    "responses": {
+
+      "200": {
+
+        "description": "editeur is updated",
+
+        "schema": {
+
+          "$ref": "#/definitions/editeur"
+
+        }
+
+      }
+
+    }
+
+  }
+  },
+  "/editeurs/deleteediteur/{id}":{
+    "parameters": [
+
+      {
+
+        "name": "id",
+
+        "in": "path",
+
+        "required": true,
+
+        "description": "ID of user that we want to find",
+
+        "type": "string"
+
+      }
+
+    ],
+      "delete": {
+
+    "summary": "Delete user with given ID",
+
+    "tags": [
+
+      "editeurs"
+
+    ],
+
+    "responses": {
+
+      "200": {
+
+        "description": "editeur is deleted",
+
+        "schema": {
+
+          "$ref": "#/definitions/editeur"
+
+        }
+
+      }
+
+    }
+
+  }
+    
+  },
+  
+  "/aviss/Addavis":{
+    "post": {
+      "tags": [
+
+        "aviss"
+
+      ],
+
+      "description": "upadte avis",
+
+      "parameters": [
+
+        {
+
+          "name": "avis",
+
+          "in": "body",
+
+          "description": "user that we want to upadte",
+
+          "schema": {
+
+            "$ref": "#/definitions/avis"
+
+          }
+
+        }
+
+      ],
+
+      "produces": [
+
+        "application/json"
+
+      ],
+
+      "responses": {
+
+        "200": {
+
+          "description": " avis is trouver",
+
+          "schema": {
+
+            "$ref": "#/definitions/avis"
+
+          }
+
+        }
+
+      }
+
+    
+
+    }
+
+  },
+  "/aviss/getAllavis":{
+    "get": {
+
+      "tags": [
+  
+        "aviss"
+  
+      ],
+  
+      "summary": "Get all avis in system",
+  
+      "responses": {
+  
+        "200": {
+  
+          "description": "OK",
+  
+          "schema": {
+  
+            "$ref": "#/definitions/avis"
+  
+          }
+  
+        }
+  
+      }
+  
+    }
+  },
+  "/aviss/getOneavis/{id}":{
+    "parameters": [
+  
+      {
+  
+        "name": "id",
+  
+        "in": "path",
+  
+        "required": true,
+  
+        "description": "ID of avis that we want to find",
+  
+        "type": "string"
+  
+      }
+  
+    ],
+  
+    "get": {
+  
+      "tags": [
+  
+        "aviss"
+  
+      ],
+  
+      "summary": "Get one avis in system",
+  
+      "responses": {
+  
+        "200": {
+  
+          "description": "OK",
+  
+          "schema": {
+  
+            "$ref": "#/definitions/avis"
+  
+          }
+  
+        }
+  
+      }
+  
+    }
+  },
+  "/aviss/updateavis/{id}":{
+    "parameters": [
+  
+      {
+
+        "name": "id",
+
+        "in": "path",
+
+        "required": true,
+
+        "description": "ID of avis that we want to find",
+
+        "type": "string"
+
+      }
+
+    ],
+
+  
+
+  "put": {
+
+    "summary": "Update avis with give ID",
+
+    "tags": [
+
+      "aviss"
+
+    ],
+
+    "parameters": [
+
+      {
+
+        "name": "avis",
+
+        "in": "body",
+
+        "description": "avis with new values of properties",
+
+        "schema": {
+
+          "$ref": "#/definitions/avis"
+
+        }
+
+      }
+
+    ],
+
+    "responses": {
+
+      "200": {
+
+        "description": "avis is updated",
+
+        "schema": {
+
+          "$ref": "#/definitions/avis"
+
+        }
+
+      }
+
+    }
+
+  }
+  },
+  "/aviss/deleteavis/{id}":{
+    "parameters": [
+
+      {
+
+        "name": "id",
+
+        "in": "path",
+
+        "required": true,
+
+        "description": "ID of avis that we want to find",
+
+        "type": "string"
+
+      }
+
+    ],
+      "delete": {
+
+    "summary": "Delete avis with given ID",
+
+    "tags": [
+
+      "aviss"
+
+    ],
+
+    "responses": {
+
+      "200": {
+
+        "description": "avis is deleted",
+
+        "schema": {
+
+          "$ref": "#/definitions/avis"
+
+        }
+
+      }
+
+    }
+
+  }
+    
+  },
+  "/papiers/Addpapier":{
+     
+
+    "post": {
+
+      "tags": [
+
+        "papiers"
+
+      ],
+
+      "description": "upadte user",
+
+      "parameters": [
+
+        {
+
+          "name": "name",
+
+          "in":"formData",
+  
+          "required":true,
+
+          "description":"user that we want to update",
+
+          "type":"string"
+
+        },
+        {
+
+          "name": "domaine",
+
+          "in":"formData",
+  
+              "required":true,
+  
+              "description":"user that we want to update",
+  
+              "type":"string"
+
+        }, {
+  
+          "name": "file",
+
+          "in":"formData",
+
+          "required":true,
+
+          "description":"image of user",
+
+          "type":"file",
+
+          "items":{
+
+            "name":"file",
+
+            "type":"file",
+
+            "in":"formData",
+
+            "required":true,
+
+            "description":"user that we want to update"
+
+          }
+
+        },
+        
+        
+
+        {
+
+          "name": "chercheur",
+
+          "in":"formData",
+  
+              "required":true,
+  
+              "description":"user that we want to update",
+  
+              "type":"string"
+
+        }
+
+      ],
+
+      "produces": [
+
+        "application/json"
+
+      ],
+
+      "responses": {
+
+        "200": {
+
+          "description": " papier is trouver",
+
+          "schema": {
+
+            "$ref": "#/definitions/papier"
+
+          }
+
+        }
+
+      }
+
+    }
+
+   
+
+  
+},
+"/papiers/getAllpapier":{
+"get": {
+
+  "tags": [
+
+    "papiers"
+
+  ],
+
+  "summary": "Get all papiers in system",
+
+  "responses": {
+
+    "200": {
+
+      "description": "OK",
+
+      "schema": {
+
+        "$ref": "#/definitions/papier"
+
+      }
+
+    }
+
+  }
+
+}
+
+}, 
+"/papiers/getOnepapier/{id}":{
+"parameters": [
+
+  {
+
+    "name": "id",
+
+    "in": "path",
+
+    "required": true,
+
+    "description": "ID of user that we want to find",
+
+    "type": "string"
+
+  }
+
+],
+
+"get": {
+
+  "tags": [
+
+    "papiers"
+
+  ],
+
+  "summary": "Get one papier in system",
+
+  "responses": {
+
+    "200": {
+
+      "description": "OK",
+
+      "schema": {
+
+        "$ref": "#/definitions/papier"
+
+      }
+
+    }
+
+  }
+
+
+
+}},
+"/papiers/updatepapier/{id}":{
+  "parameters": [
+
+    {
+
+      "name": "id",
+
+      "in": "path",
+
+      "required": true,
+
+      "description": "ID of user that we want to find",
+
+      "type": "string"
+
+    }
+
+  ],
+
+
+
+"put": {
+
+  "summary": "Update papier with give ID",
+
+  "tags": [
+
+    "papiers"
+
+  ],
+
+  "parameters": [
+
+    {
+
+      "name": "papier",
+
+      "in": "body",
+
+      "description": "User with new values of properties",
+
+      "schema": {
+
+        "$ref": "#/definitions/papier"
+
+      }
+
+    }
+
+  ],
+
+  "responses": {
+
+    "200": {
+
+      "description": "papier is updated",
+
+      "schema": {
+
+        "$ref": "#/definitions/papier"
+
+      }
+
+    }
+
+  }
+
+}
+
+},
+"/papiers/deletepapier/{id}":{
+  "parameters": [
+
+    {
+
+      "name": "id",
+
+      "in": "path",
+
+      "required": true,
+
+      "description": "ID of user that we want to find",
+
+      "type": "string"
+
+    }
+
+  ],
+    "delete": {
+
+  "summary": "Delete papier with given ID",
+
+  "tags": [
+
+    "papiers"
+
+  ],
+
+  "responses": {
+
+    "200": {
+
+      "description": "papier is deleted",
+
+      "schema": {
+
+        "$ref": "#/definitions/papier"
+
+      }
+
+    }
+
+  }
+
+}
+  
+
+}
+
+},
+  "definitions": {
+    "chercheur": {
+      "required": [
+        "email",
+        
+        "_id"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "email": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "password": {
+          "type": "string"
+        },
+        "domaine": {
+          "type": "string"
+        },
+        "papier": {
+          "type": "string"
+        }
+
+      }
+    },
+    "chercheurs": {
+      "type": "array",
+      "$ref": "#/definitions/chercheur"
+    },
+    "expert": {
+      "required": [
+        "email",
+        
+        "_id"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "email": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "password": {
+          "type": "string"
+        },
+        "avis": {
+          "type": "string"
+        },
+        "domaine": {
+          "type": "string"
+        }
+
+      }
+    },
+    "experts": {
+      "type": "array",
+      "$ref": "#/definitions/expert"
+    },
+    "editeur": {
+      "required": [
+        "email",
+        
+        "_id"
+      ],
+      "properties": {
+        "nameed": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "emailed": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "passworded": {
+          "type": "string"
+        }
+
+      }
+    },
+    "editeurs": {
+      "type": "array",
+      "$ref": "#/definitions/editeur"
+    },
+    "avis": {
+      "required": [
+        "name",
+        
+        "_id"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "description": {
+          "type": "string"
+        },
+        "expert": {
+          "type":"string"
+        }
+
+      }
+    },
+    "aviss": {
+      "type": "array",
+      "$ref": "#/definitions/avis"
+    },
+    
+    "papier": {
+      "required": [
+        "name",
+        
+        "_id"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "domaine": {
+          "type": "string"
+        },
+        "chercheur": {
+          "type":"string"
+        }
+
+      }
+    },
+    "papiers": {
+      "type": "array",
+      "$ref": "#/definitions/papier"
+    }
+
+  }
+}
